@@ -1,0 +1,707 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700, 900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+#hud {
+    position: absolute;
+    right: 0;
+    font-family: Roboto;
+    margin-top: 2.1vw;
+    margin-right: 1vw;
+    width: 13vw;
+    height: 14.8vw;
+    opacity: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#hud #logo {
+    width: 4vw;
+    right: 1vw;
+    transition: all ease 0.4s;
+    z-index: 1;
+    position: absolute;
+    border: 0.1vw solid #a00;
+    border-radius: 0.7vw;
+}
+
+
+
+#hud #player {
+    position: relative;
+    margin-left: 0vw;
+    transition: all ease 0.3s;
+    width: 100%;
+}
+
+#hud #player-header {
+    position: relative;
+    width: 100%;
+    transition: all ease 0.3s;
+    margin-left: 0vw;
+    left: 0vw;
+    background-color: rgba(8, 8, 8, 0.3);
+    border-radius: 0.3vw;
+    margin-bottom: 0.3vw;
+    height: 1.7vw;
+}
+
+#hud #player-ping {
+    position: relative;
+    float: left;
+    transition: all ease 0.3s;
+    width: auto;
+    margin-top: 0.2vw;
+    height: 1.7vw;
+    border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
+}
+
+#hud #player-ping img {
+    position: relative;
+    margin-top: 0.0vw;
+    transition: all ease 0.3s;
+    margin-left: 0.25vw;
+    width: 1.0vw;
+    margin-right: 0.1vw;
+    height: 1.0vw;
+}
+
+#hud #player-ping span {
+    color: #58e72c;
+    font-size: 0.8vw;
+    transition: all ease 0.3s;
+    position: relative;
+    margin-right: 0;
+}
+
+#hud #server-name {
+    position: absolute;
+    margin-left: 2.0vw;
+    width: 9vw;
+    overflow: hidden;
+    transition: all ease 0.3s;
+    height: 1.9vw;
+    font-size: 1.1vw;
+    background-size: 1000% 100%;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.2vw;
+    padding-left: 0.5vw;
+    margin-top: 0.05vw;
+    border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+#hud #server-name span {
+    position: relative;
+    font-size: 1.0vw;
+    transition: all ease 0.3s;
+    color: #fff;
+    font-family: Roboto-Regular;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: linear-gradient(to right, #00ccff 10%, #cc00ff 50%, #ffee00 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1.5s linear infinite;
+    display: inline-block;
+}
+
+@keyframes background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#hud #player-name {
+    position: absolute;
+    height: 1.5vw;
+    right: 0.55vw;
+    width: 8.9vw;
+    top: 0.1vw;
+    margin-top: 0vw;
+    transition: all ease 0.3s;
+    background-color: rgba(3, 4, 6, 0.2);
+    color: #fff;
+}
+
+#hud #player-bc {
+    position: relative;
+    width: 100%;
+    border-radius: 0.2vw;
+    height: 10.3vw;
+    background-color: rgba(8, 8, 8, 0.1);
+    transition: all ease 0.3s;
+}
+
+#hud #player-fullname {
+    position: relative;
+    width: 8.8vw;
+    height: 1.7vw;
+    transition: all ease 0.3s;
+    overflow: hidden;
+    font-size: 0.9vw;
+    text-align: center !important;
+    font-family: Roboto-Regular;
+    border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
+}
+
+
+
+#hud #player-fullname span {
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    transition: all ease 0.3s;
+    top: 0.10vw;
+}
+#hud #player-weapon-mug {
+    height: 3.8vw;
+    transition: all ease 0.3s;
+    position: absolute;
+    border-radius: 0.1vw 0.1vw 0.1vw 0.1vw;
+    background-color: rgba(3, 4, 6, 0.3);
+    width: 3.8vw;
+}
+#hud .left-square-cash {
+    position: absolute;
+    width: 1.7vw;
+    top: -0.05vw;
+    transition: all ease 0.3s;
+    left: 0vw;
+    height: 1.7vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#hud .left-square-coin {
+    position: absolute;
+    width: 1.7vw;
+    top: 0;
+    transition: all ease 0.3s;
+    left: 0vw;
+    height: 1.4vw;
+    border-radius: 0.3vw 0 0 0.3vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#hud .left-square-id {
+    position: absolute;
+    margin-top: 0;
+    right: 0;
+    width: 1.5vw;
+    border-radius: 0.0vw 0.2vw 0.2vw 0.0vw;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+    height: 1.35vw;
+}
+#hud .left-square-hour {
+    position: absolute;
+    margin-top: 0;
+    width: 1.5vw;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+    height: 1.4vw;
+    border-radius: 0.2vw 0 0 0.2vw;
+}
+#hud .player-hour {
+    position: absolute;
+    transition: all ease 0.3s;
+    width: 3.8vw;
+    top: -1.9vw;
+    right: 0.1vw;
+    height: 1.5vw;
+    border-radius: 0.2vw;
+}
+#hud .player-id {
+    position: absolute;
+    width: 11.9vw;
+    transition: all 0.3s ease 0s;
+    right: 0.5vw;
+    top: 3.4vw;
+    text-align: center;
+    border: 0.01vw solid rgba(255, 255, 255, 0.7);
+    height: 1.5vw;
+    border-radius: 0.2vw;
+}
+#hud .left-square-cash img {
+    position: absolute;
+    transition: all ease 0.3s;
+    width: 1.3vw;
+    height: 1.3vw;
+    margin-top: 0.2vw;
+    margin-left: 0.2vw;
+}
+#hud .left-square-coin img {
+    position: absolute;
+    transition: all ease 0.3s;
+    width: 1.0vw;
+    height: 1.0vw;
+    top: 0.2vw;
+    right: 0.35vw;
+}
+#hud .left-square-id img {
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    width: 1vw;
+    height: 1vw;
+    top: 0.2vw;
+    right: 0.20vw;
+}
+#hud .left-square-hour img {
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    margin-top: 0.2vw;
+    margin-left: 0.3vw;
+    transition: all ease 0.3s;
+}
+#hud .left-square-user {
+    position: absolute;
+    transition: all ease 0.3s;
+    margin-top: 0vw;
+    width: 1.7vw;
+    height: 1.7vw;
+    border-radius: 0.3vw 0 0 0.3vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#hud .left-square-user img {
+    position: absolute;
+    width: 1.3vw;
+    transition: all ease 0.3s;
+    height: 1.3vw;
+    margin-top: 0.2vw;
+    margin-left: 0.2vw;
+}
+#hud #player-cash {
+    height: 1.5vw;
+    top: 1.6vw;
+    border: none;
+    text-align: center !important;
+    background: rgba(3, 4, 6, 0.2);
+    right: 0.55vw;
+    width: 8.9vw;
+    position: absolute;
+    transition: all ease 0.3s;
+}
+
+#hud #player-cash-texte {
+    position: relative;
+    color: #58e72c;
+    top: 0;
+    transition: all ease 0.3s;
+    font-size: 1.1vw;
+}
+#hud #player-coin-texte {
+    position: relative;
+    color: #FDD835;
+    transition: all ease 0.3s;
+    font-size: 1.0vw;
+    margin-left: 1.6vw;
+}
+#hud #hour {
+    position: relative;
+    width: 100%;
+    height: 1.7vw;
+    transition: all ease 0.3s;
+    margin-left: 1.5vw;
+    font-size: 0.8vw;
+    color: #fff;
+    top: 0.10vw;
+}
+#hud #source {
+    position: relative;
+    width: 100%;
+    height: 1.7vw;
+    top: 0vw;
+    right: 0.7vw;
+    transition: all ease 0.3s;
+    font-size: 1.0vw;
+    color: #fff;
+    text-align: left;
+}
+#hud #player-jobo {
+    position: relative;
+    float: left;
+    left: 0vw;
+    top: 0vw;
+    transition: all ease 0.3s;
+    width: 100%;
+}
+#hud #player-gang {
+    position: relative;
+    float: left;
+    left: 0vw;
+    transition: all ease 0.3s;
+    top: 0vw;
+    margin-top: 0.0vw;
+    width: 100%;
+}
+#hud .left-square-info {
+    position: relative;
+    float: left;
+    transition: all ease 0.3s;
+    margin-top: 0.4vw;
+    width: 5.05vw;
+    height: 1.7vw;
+    border-radius: 0.2vw 0 0 0.2vw;
+    background-color: rgba(3, 4, 6, 0.2);
+}
+#hud .right-square-info {
+    position: relative;
+    width: 5.05vw;
+    height: 1.7vw;
+    margin-top: 0.4vw;
+    transition: all ease 0.3s;
+    margin-left: 8vw;
+    border-radius: 0 0.2vw 0.2vw 0;
+    background-color: rgba(3, 4, 6, 0.2);
+}
+#hud .center-info {
+    position: relative;
+    float: left;
+    transition: all ease 0.3s;
+    margin-top: 0.4vw;
+    margin-left: 0.45vw;
+    width: 2vw;
+    height: 1.7vw;
+    border-radius: 0.2vw 0.2vw 0.2vw 0.2vw;
+    background-color: rgba(3, 4, 6, 0.2);
+}
+#hud #health {
+    background: #E53935;
+    height: 100%;
+    float: left;
+    width: 50%;
+    transition: all ease 0.3s;
+    border-radius: 0.2vw;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+	
+	
+}
+#hud #armor {
+    float: left;
+    height: 100%;
+    transition: all ease 0.3s;
+    width: 50%;
+    background: #fff;
+    border-radius: 0.2vw;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+}
+#hud #hunger {
+    height: 100%;
+    width: 50%;
+    transition: all ease 0.3s;
+    background: linear-gradient(45deg, #ff8c20 0, #ff7b00 100%);
+    float: left;
+    border-radius: 0.2vw;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+	
+}
+#hud #thirst {
+    transition: all ease 0.3s;
+    float: right;
+    width: 50%;
+    float: left;
+    height: 100%;
+    background: #0285ff;
+    border-radius: 0.2vw;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+}
+#hud #job-name {
+    position: relative;
+    color: #fff;
+    transition: all ease 0.3s;
+    text-align: center;
+    font-size: 0.9vw;
+}
+#hud #job-name span {
+    position: relative;
+    top: 0.2vw;
+    transition: all ease 0.3s;
+}
+#hud #job-img img {
+    position: relative;
+    top: 0.1vw;
+    left: 0.25vw;
+    transition: all ease 0.3s;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+#hud #job-grade {
+    position: absolute;
+    transition: all ease 0.3s;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9vw;
+}
+#hud #job-grade span {
+    position: relative;
+    transition: all ease 0.3s;
+    top: 0.2vw;
+}
+#hud #gang-name {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    transition: all ease 0.3s;
+    font-size: 0.9vw;
+}
+#hud #gang-name span {
+    position: relative;
+    transition: all ease 0.3s;
+    top: 0.2vw;
+}
+#hud #gang-img img {
+    position: relative;
+    top: 0.1vw;
+    left: 0.25vw;
+    width: 1.5vw;
+    border-radius: 1vw;
+    transition: all ease 0.3s;
+    height: 1.5vw;
+}
+#hud #gang-grade {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    transition: all ease 0.3s;
+    font-size: 0.9vw;
+}
+#hud #gang-grade span {
+    position: relative;
+    top: 0.2vw;
+    transition: all ease 0.3s;
+}
+.ticktok {
+    -webkit-animation: ticktok 1s infinite;
+}
+@-webkit-keyframes ticktok {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes colorchange {
+    0% {
+        color: #0ff;
+    }
+    
+    25% {
+        color: #15ff00;
+    }
+    
+    50% {
+        color: #e100ff;
+    }
+    
+    75% {
+        color: #fe0;
+    }
+    
+    100% {
+        color: red;
+    }
+}
+.d-none {
+    display: none !important;
+}
+.d-block {
+    display: block;
+}
+.cp-none {
+    clip-path: none;
+}
+.l-cp {
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+}
+.r-cp {
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+}
+#hud .left-md1 {
+    position: absolute;
+    float: left;
+    width: 1.7vw;
+    top: 4vw;
+    height: 1.7vw;
+    transition: all ease 0.3s;
+    border-radius: 0.3vw 0 0 0.3vw;
+    background-color: RGBA(211, 47, 47, 0.7);
+    border-radius: 0.2vw 0vw 0vw 0.2vw;
+}
+#hud .left-md1 img {
+    position: relative;
+    width: 1.8vw;
+    left: -0.05vw;
+    padding: 0.2vw;
+    top: 0vw;
+    transition: all ease 0.3s;
+    height: 1.7vw;
+}
+#hud .left-md2 {
+    position: absolute;
+    float: left;
+    width: 1.7vw;
+    top: 6vw;
+    height: 1.7vw;
+    border-radius: 0.3vw 0 0 0.3vw;
+    transition: all ease 0.3s;
+    background-color: RGBA(211, 47, 47, 0.7);
+    border-radius: 0.2vw 0vw 0vw 0.2vw;
+}
+#hud .left-md2 img {
+    position: relative;
+    width: 1.7vw;
+    transition: all ease 0.3s;
+    height: 1.7vw;
+    padding: 0.1vw;
+}
+#hud .right-md1 {
+    position: absolute;
+    width: 1.7vw;
+    top: 4vw;
+    right: 0;
+    border-radius: 0.2vw 0.2vw 0.2vw 0.2vw;
+    height: 1.7vw;
+    transition: all ease 0.3s;
+    margin-left: 13vw;
+    border-radius: 0 0.3vw 0.3vw 0;
+    background-color: RGBA(211, 47, 47, 0.7);
+}
+#hud .right-md1 img {
+    position: relative;
+    padding: 0.1vw;
+    transition: all ease 0.3s;
+    width: 1.7vw;
+    height: 1.7vw;
+    float: right;
+}
+#hud .right-md2 {
+    position: absolute;
+    width: 1.7vw;
+    top: 6vw;
+    right: 0;
+    border-radius: 0.2vw 0.2vw 0.2vw 0.2vw;
+    height: 1.7vw;
+    margin-left: 13vw;
+    border-radius: 0 0.2vw 0.2vw 0;
+    transition: all ease 0.3s;
+    background-color: RGBA(211, 47, 47, 0.7);
+}
+#hud .right-md2 img {
+    position: relative;
+    padding: 0.1vw;
+    width: 1.7vw;
+    height: 1.7vw;
+    transition: all ease 0.3s;
+    float: right;
+}
+#hud .left-status1 {
+    position: absolute;
+    top: 6.1vw;
+    left: -0.85vw;
+    float: left;
+    margin-top: 0.8vw;
+    width: 4.5vw;
+    transition: all ease 0.3s;
+    height: 1.5vw;
+    border-radius: 0.2vw;
+    background: linear-gradient(45deg, #ffffff4d 0, #ffffff4d 100%);
+	transform: rotate(-90deg);
+}
+#hud .left-status2 {
+    position: absolute;
+    top: 6.1vw;
+    left: 2.5vw;
+    float: left;
+    margin-top: 0.8vw;
+    width: 4.5vw;
+    transition: all ease 0.3s;
+    height: 1.5vw;
+    border-radius: 0.2vw;
+    background: linear-gradient(45deg, #00f7ff4d 0, #53f9ff4d 100%);
+	transform: rotate(-90deg);
+}
+#hud .right-status1 {
+    position: absolute;
+    margin-top: 1.3vw;
+    top: 5.6vw;
+    left: 9.4vw;
+    transition: all ease 0.3s;
+    width: 4.5vw;
+    z-index: 2;
+    border-radius: 0.2vw;
+    height: 1.5vw;
+    background: linear-gradient(45deg, #ff00004d 0, #aa00004d 100%);
+	transform: rotate(-90deg);
+}
+#hud .right-status2 {
+    position: absolute;
+    margin-top: 1.3vw;
+    top: 5.6vw;
+    left: 6vw;
+    transition: all ease 0.3s;
+    z-index: 2;
+    width: 4.5vw;
+    border-radius: 0.2vw;
+    height: 1.5vw;
+    background: linear-gradient(45deg, #ff8c204d 0, #ff7b004d 100%);
+	transform: rotate(-90deg);
+}
+#hud .khat-vasat {
+    position: absolute;
+    width: 7.7vw;
+    height: 0.01vw;
+    background: rgba(255, 255, 255, 0.6);
+    right: 1.0vw;
+    top: 1.6vw;
+}
+
+#hud #mugshot {
+    position: relative;
+    float: left;
+    width: 3.0vw;
+    height: 3.0vw;
+    top: 0.1vw;
+    left: 0.6vw;
+    border-radius: 0.2vw 0.0vw 0.0vw 0.2vw;
+    background: rgba(3, 4, 6, 0.3);
+}
+
+
